@@ -53,3 +53,22 @@ print(mapped_list)
 As you can see, lambdas are very useful in cleaning up code and using fewer lines. Take care that you don't overcomplicate a single line though, readability is important.\
 \
 Adapted from Suraj Gurav's **Lambda Functions in Python: All You Need To Know**, https://towardsdatascience.com/lambda-functions-with-3-practical-examples-in-python-f4ed7f266e53.
+
+---
+## Hashing
+We say an object is **hashable** if it has a hash value which never changes during its lifetime. All of Python's immutable built-in objects are hashable (e.g. ints, floats, strings) while mutable containers (e.g. lists, dictionaries) are not.
+
+### Hash Tables
+- A data structure where the address or index of the data element is generated from a hash function.
+- This makes accessing the data faster as the hash-generated index acts as a key for the data value.
+- So instead of accessing an element by going index by index through an array, elements are accessed directly by this hash-generated key.
+- In Python, a simple hash table is implemented using a dictionary.
+- However, you can make your own using a **Linked List** and a custom hashing function.
+- **Collisions** need to be accounted for. Two different strings might hash to the same value, or two different strings might have different hashcodes but the same index.
+- The time complexity for insert, find & delete is generally `O(1)`, but can be `O(n)` for a terrible hash table.\
+
+```
+hash_table = dict()
+hash_table["Damian Lillard"] = Player(team = "POR", age = 32, height = "6ft2")
+```
+
