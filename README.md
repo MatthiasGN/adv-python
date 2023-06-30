@@ -56,7 +56,7 @@ Adapted from Suraj Gurav's **Lambda Functions in Python: All You Need To Know**,
 
 ---
 ## Hashing
-We say an object is **hashable** if it has a hash value which never changes during its lifetime. All of Python's immutable built-in objects are hashable (e.g. ints, floats, strings) while mutable containers (e.g. lists, dictionaries) are not.
+We say an object is **hashable** if it has a hash value which never changes during its lifetime. All of Python's immutable built-in objects are hashable (e.g. ints, floats, strings) while mutable containers (e.g. lists, dictionaries) are not. Note that tuples are immutable containers and thus hashable.
 
 ### Hash Tables
 - A data structure where the address or index of the data element is generated from a hash function.
@@ -72,3 +72,9 @@ hash_table = dict()
 hash_table["Damian Lillard"] = Player(team = "POR", age = 32, height = "6ft2")
 ```
 
+### Sets
+- Sort of list data structure
+- Forbids duplicates
+- Requires items to be **hashable**
+- Checking for membership of a value in a `set` is very fast, with the same speed as checking the keys in a `dict` (i.e. hash table speeds!). Meanwhile a list takes time proportional to the list's length (`O(n)` worst case).
+- So, if you have hashable items and don't care about order or duplicates, use `set` rather than `list` or `dict`.
