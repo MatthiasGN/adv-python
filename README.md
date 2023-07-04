@@ -78,3 +78,15 @@ hash_table["Damian Lillard"] = Player(team = "POR", age = 32, height = "6ft2")
 - Requires items to be **hashable**
 - Checking for membership of a value in a `set` is very fast, with the same speed as checking the keys in a `dict` (i.e. hash table speeds!). Meanwhile a list takes time proportional to the list's length (`O(n)` worst case).
 - So, if you have hashable items and don't care about order or duplicates, use `set` rather than `list` or `dict`.
+
+---
+### Useful Methods
+Max Size
+```
+import sys
+
+max_sz = sys.maxsize
+list = range(max_sz)
+print(len(list))
+# 9223372036854775807
+```
